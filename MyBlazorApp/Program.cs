@@ -13,6 +13,8 @@ namespace MyBlazorApp.Client
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+            // Razorコンポーネントを使用できるようにする
             builder.Services.AddRadzenComponents();
             await builder.Build().RunAsync();
         }
